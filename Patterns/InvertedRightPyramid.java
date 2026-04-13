@@ -33,6 +33,19 @@ public class InvertedRightPyramid{
         }
 
     }
+    //TC : i+2*n-2*i-1=2*n-i-1 = O(n)
+    //2n=n*n=O(n^2), SC-> O(1)
+    static void invertedStarPyramid(int n){
+        for(int i=0; i<n; i++){//n
+            for(int j=0; j<i; j++){ //i-0
+                System.out.print(" ");
+            }
+            for(int k=i; k<2*n-i-1; k++){ //2*n-i-1-i = 2*n-2*i-1
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of pyramid:");
@@ -42,6 +55,7 @@ public class InvertedRightPyramid{
         // patternStar(n);
         // System.out.println("Number: ");
         // patternNumber(n);
-        sevenStarPyramid(n);
+        // sevenStarPyramid(n);
+        invertedStarPyramid(n);
     }
 }
