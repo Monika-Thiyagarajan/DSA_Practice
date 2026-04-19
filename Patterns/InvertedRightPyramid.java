@@ -46,16 +46,56 @@ public class InvertedRightPyramid{
             System.out.println("");
         }
     }
+
+    //TC:O(n^2), SC:O(1)
+    static void diamond(int n){
+        int temp = 2*n-1, k = 0;
+         for(int i=0; i<=2*n-1; i++){
+            int l = 0, m=n-1-i, p=n-1-i, q=n+i;
+            if(i>n-1){
+                m = i-n;
+                p = i-n;
+                q = temp-k;
+                k++;
+            }
+            for(int j=l; j<m; j++){
+                System.out.print(" ");
+            }
+            for(int r=p; r<q; r++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }                                                   
+    }
+    //TC:O()
+    static void halfDiamond(int n){
+        int temp=n-1;
+        for(int i=0; i<2*n-1;i++){
+            if(i>n-1){
+                for(int k=0; k<temp; k++){
+                    System.out.print("*");
+                }
+                temp--;
+            }else{
+            for(int j=0; j<i+1; j++){
+                System.out.print("*");
+            }
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of pyramid:");
         int n = sc.nextInt();
-        System.out.println("Star");
+        // System.out.println("Star");
         sc.close();
         // patternStar(n);
         // System.out.println("Number: ");
         // patternNumber(n);
         // sevenStarPyramid(n);
-        invertedStarPyramid(n);
+        // invertedStarPyramid(n);
+        // diamond(n);
+        halfDiamond(n);
     }
 }
